@@ -4,23 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles">
     <title>Daily Planner</title>
 </head>
 <body class="body">
     <h1 class="header">Your Daily Planner</h1>
     <div class="parent">
-        <div class="box1"></div>
+        <div class="box1">
+            <form class="toDoForm">
+                <input class="textBox" type='text'  placeholder='Enter to-do item here' />
+                <button>Add Item</button>
+            </form>
+            <section class="itemList"></section>
+        </div>
         <div class="box2">
             <div class="inside1">Check Today's Weather
-                <div>
-                </div>
+                <form class ="weatherForm">
+                    <input class="weatherBox" type='text' required placeholder='Enter City' />
+                    <button>Search</button>
+                </form>
+                <section class="weatherReport">
+                    dfgdg
+                </section>                
             </div>
-            <div class="inside2"></div>
+            <div class="inside2">
+                <section class="quote"></section>
+            </div>
         </div>
     </div>
 
-    <script src="../node_modules/axios/dist/axios.min.js"></script>
-    <script src="main.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="/js"></script>
 </body>
 </html>

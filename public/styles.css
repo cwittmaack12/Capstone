@@ -17,7 +17,7 @@
 }
 
 .parent{
-    height: 730px;
+    height: 900px;
     background-color: blanchedalmond;
     margin-left: 280px;
     margin-right: 280px;
@@ -34,6 +34,7 @@
     background-color: #D4DCDF;
     border-radius: 30px;
 }
+
 
 .box2{
     width: 35%;
@@ -59,4 +60,22 @@
     height: 45%;
     border-radius: 30px;
 
+}
+
+.itemList{
+    height: 90%;
+    background-color: aquamarine;
+    margin-top: 20px;
+}
+
+.weather{
+    height: 80%;
+    background-color: red;
+    margin-top: 10px;
+}
+
+.quote{
+    background-color: black;
+    height: 80%;
+    margin-top: 7%;
 }
