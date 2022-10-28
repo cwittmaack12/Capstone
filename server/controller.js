@@ -1,4 +1,6 @@
+const { response } = require('express')
 const path = require('path')
+const axios = require('axios')
 let newLists = []
 let nextID = 1
 
@@ -24,22 +26,27 @@ module.exports = {
         }
         nextID++
         newLists.push(newList)
+        console.log(newLists)
         res.status(200).send(newLists)
     },
     deleteListItem: (req, res) => {
         let { id } = req.params
-        let position = newLists.findIndex(obj => obj.id === +id)
-        /////could i bring in req.body and use newLists.splice(newLists.indexOf(item),1) instead?
-        //or///////////////////////
-        //let colors = ['red', 'blue', 'green'];
-        //let index_element_to_be_delete = colors.indexOf('green');
-        //colors.splice(index_element_to_be_delete); 
-        newLists.splice(position - 1 , 1)
+        let position = newLists.findIndex(obj => +obj.id === +id)
+        console.log(id)
+    
+        newLists.splice(position, 1)
         res.status(200).send(newLists)
-        ////would it work to increment the nextID back???//
     },
     getZen: (req,res) => {
-
+        let url = "https://zenquotes.io/api/random" ;
+        axios.get(url)
+            .then(response => {
+            res.status(200).send(response.data)
+                    })
+            .catch(err => {
+                console.log(err)
+            })
+        
     },
     getWeather: (req, res) => {
 

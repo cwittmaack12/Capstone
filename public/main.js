@@ -14,7 +14,8 @@ const createList = array => {
         let deleteButton = document.createElement('button')
         let listText = document.createElement('span')
 
-        listItem.id = id
+        //listItem.id = id
+        deleteButton.id = id
         listText.textContent = item
         deleteButton.textContent = 'Delete'
         ///deleteButton below is the right one?  Seems to be.
@@ -27,7 +28,7 @@ const createList = array => {
     container.appendChild(newList)
 }
 
-function addToList(evt) {
+const addToList = (evt) => {
     evt.preventDefault();
     container.innerHTML = ''
     let inputObj = {item: inputItem.value}
@@ -41,15 +42,13 @@ function addToList(evt) {
         .catch(err => console.log(err))
 }
 
-const liTags = document.querySelectorAll('li')
 
 const deleteListItem = (evt) =>{
     evt.preventDefault()
     let toDoID = evt.target.id
-
-    axios
-        /////added colon in here which seemed to make delete work
-        .delete(`/api/list/:${toDoID}`)
+    console.log(toDoID)
+    axios 
+        .delete(`/api/list/${toDoID}`)
         .then(res => {
             let { data } = res
             createList(data)
@@ -57,25 +56,33 @@ const deleteListItem = (evt) =>{
         .catch(err => console.log(err))
 }
 
-
 addForm.addEventListener('submit', addToList)
 
 ///get Zen//
 
+const quote = document.querySelector('.quote')
 
- const getZen = () => {
-     axios.get('/api/list')
+const addZen = (zenObject) => {
+    let{h} = zenObject
+    let zenBlock = document.createElement('p')
+    zenBlock.innerHTML = h
+    quote.appendChild(zenBlock)
+}
+
+
+const getZen = () => {
+     axios.get('/api/zen')
      .then(res => {
          let { data } = res
-         getZen(data)
+         console.log(data)
+         addZen(data[0])
      }) 
      .catch(err => console.log(err))
  }
 
+getZen()
 
-
-
-
+///////////////// Get Weather ///////////////////////
 
 
 

@@ -21,8 +21,8 @@ app.get('/', getHTML)
 app.get('/styles', getCSS)
 app.get('/js', getJS)
 app.post('/api/list', addListItem)
-app.get('/api/list', getZen)
-app.get('/api/list', getWeather)
+app.get('/api/zen', getZen)
+app.get('/api/weather', getWeather)
 app.delete('/api/list/:id', deleteListItem)
 
 
