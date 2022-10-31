@@ -5,7 +5,6 @@ const container = document.querySelector('.itemList')
 const clearBtn = document.querySelector('.addBtn')
 
 
-
 const createList = array => {
     container.innerHTML = ''
     let newList = document.createElement('ul')
@@ -29,10 +28,13 @@ const createList = array => {
 
 }
 
+
+
 const addToList = (evt) => {
     evt.preventDefault();
     container.innerHTML = ''
     let inputObj = {item: inputItem.value}
+    inputItem.value = ''
     axios
         .post('/api/list', inputObj)
         .then(res => {
@@ -42,6 +44,7 @@ const addToList = (evt) => {
         })
         .catch(err => console.log(err))
 }
+
 
 
 
@@ -105,9 +108,8 @@ const addWeather = (weatherObject) => {
 
 const getWeather = (evt) => {
     evt.preventDefault();
-    //this needed?  weatherDropBox.innerHTML = ''
     let zip = cityText.value
-    console.log(zip)
+    cityText.value = ''
     axios
         .get(`/api/weather/${zip}` )
         .then(res => {

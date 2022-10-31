@@ -22,12 +22,9 @@
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-span{
-    font-size: 1.5em;  
-}
 
 .parent{
-    height: 900px;
+    height: 800px;
     margin-left: 280px;
     margin-right: 280px;
     display: flex;
@@ -36,15 +33,13 @@ span{
 }
 
 .box1{
-    width: 25%;
+    width: 32%;
     height: 80%;
     background-color: #EF6F6C;
     border-radius: 30px;
     border: darkgrey solid;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
-
-
 
 .tmpText{
     margin-top: 10px;
@@ -54,6 +49,11 @@ span{
 
 li{
     margin-top: 10px;
+}
+
+span{
+    font-size: 1.5em;
+    margin-right: 20px;
 }
 
 .condition{
@@ -77,25 +77,30 @@ li{
 }
 
 .textBox{
-    width: 70%;
-    height: 25px;
+    width: 65%;
+    height: 32px;
     background-color: whitesmoke;
     border: none;
     outline: none;
-    border-radius: 10px;    
+    border-radius: 10px;
+    font-size: 20px;
+    color: rgb(102, 100, 100);    
 }
 
 .weatherBox{
-    height: 25px;
-    width: 10ch ;
+    height: 32px;
+    width: 12ch ;
     background-color: whitesmoke;
     border: none;
     outline: none;
-    border-radius: 10px;    
+    border-radius: 10px;
+    font-size: 20px; 
+    color: rgb(102, 100, 100);    
+   
 }
 
 .box2{
-    width: 25%;
+    width: 32%;
     height: 80%;
     display: flex;
     flex-direction: column;
@@ -124,7 +129,7 @@ li{
 }
 
 .itemList{
-    height: 85%;
+    height: 80%;
     background-color: #EF6F6C;
     margin-top: 20px;
 }
@@ -147,21 +152,22 @@ blockquote{
 }
 
 button {
-  background: whitesmoke;
-  border-radius: 800px;
-  box-shadow: whitesmoke 0 10px 20px -10px;
-  color: black;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 18px;
-  opacity: 1;
-  outline: 0 solid transparent;
-  padding: 8px 18px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: fit-content;
-  word-break: break-word;
-  border: 1 black;
+    background: whitesmoke;
+    border-radius: 800px;
+    box-shadow: whitesmoke 0 10px 20px -10px;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 1 black;
+    margin-right: 10px;
 }
