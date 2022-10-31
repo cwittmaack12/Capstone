@@ -39,7 +39,8 @@ module.exports = {
     },
     getZen: (req,res) => {
         let url = "https://zenquotes.io/api/random" ;
-        axios.get(url)
+        axios
+            .get(url)
             .then(response => {
             res.status(200).send(response.data)
                     })
@@ -49,7 +50,27 @@ module.exports = {
         
     },
     getWeather: (req, res) => {
-
+        const { zip } = req.params
+        const apiKey = '42T2SEDM8cxrwFRRobuoHDiltYUmWyT3' 
+        const locationSearch = `http://dataservice.accuweather.com/locations/v1/search?q=${zip}&apikey=${apiKey}`
+        console.log (locationSearch)
+        axios
+            .get(locationSearch)
+            .then(response => {
+                let { Key } = response.data[0]
+                axios
+                    .get(`http://dataservice.accuweather.com/currentconditions/v1/${Key}?apikey=${apiKey}`)
+                    .then(response => {
+                        console.log(response.data)
+                        res.status(200).send(response.data)
+                    })
+                    .catch(err => console.log(err))
+                console.log(Key)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        
     }
     
 }

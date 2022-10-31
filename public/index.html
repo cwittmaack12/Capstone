@@ -4,28 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles">
-    <title>Daily Planner</title>
+    <title>Your Daily Planner</title>
 </head>
 <body class="body">
     <h1 class="header">Your Daily Planner</h1>
     <div class="parent">
         <div class="box1">
             <form class="toDoForm">
-                <input class="textBox" type='text'  placeholder='Enter to-do item here' />
+                <input class="textBox" type='text'  placeholder='Enter to-do item here' required />
                 <button>Add Item</button>
             </form>
             <section class="itemList"></section>
         </div>
         <div class="box2">
-            <div class="inside1">Check Today's Weather
+            <div class="inside1">Check Current Weather
                 <form class ="weatherForm">
-                    <input class="weatherBox" type='text' required placeholder='Enter City' />
+                    <input class="weatherBox" maxlength='5' type='text' required placeholder="Enter Zip For Weather" />
                     <button>Search</button>
                 </form>
-                <section class="weatherReport">
-                    dfgdg
-                </section>                
+                <p class="tmpText">The Current Temperature is:</p>
+                <section class="weatherReport">                
+                </section>
+                <p class="degrees">Degrees</p> 
+                <p class="current">The current conditions are</p>
+                <section class="condition"></section>               
             </div>
             <div class="inside2">
                 <section class="quote"></section>

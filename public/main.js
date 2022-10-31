@@ -63,18 +63,17 @@ addForm.addEventListener('submit', addToList)
 const quote = document.querySelector('.quote')
 
 const addZen = (zenObject) => {
-    let{h} = zenObject
+    let { h } = zenObject
     let zenBlock = document.createElement('p')
     zenBlock.innerHTML = h
     quote.appendChild(zenBlock)
 }
 
-
 const getZen = () => {
-     axios.get('/api/zen')
+     axios
+     .get('/api/zen')
      .then(res => {
          let { data } = res
-         console.log(data)
          addZen(data[0])
      }) 
      .catch(err => console.log(err))
@@ -84,10 +83,38 @@ getZen()
 
 ///////////////// Get Weather ///////////////////////
 
+const weatherForm = document.querySelector('.weatherForm')
+const cityText = document.querySelector('.weatherBox')
+const weatherDropBox = document.querySelector('.weatherReport') 
+const condition = document.querySelector('.condition')
 
+const addWeather = (weatherObject) => {
+    weatherDropBox.innerHTML = ''
+    condition.innerHTML = ''
+    let {WeatherText, HasPrecipitation, PrecipitationType, Temperature: {Imperial: {Value}}  } = weatherObject
+    let weatherBlock = document.createElement('div')
+    weatherBlock.innerHTML = Value
+    weatherDropBox.appendChild(weatherBlock)
+    let weatherCondition = document.createElement('div')
+    weatherCondition.innerHTML = WeatherText
+    condition.appendChild(weatherCondition)
+}
 
+const getWeather = (evt) => {
+    evt.preventDefault();
+    //this needed?  weatherDropBox.innerHTML = ''
+    let zip = cityText.value
+    console.log(zip)
+    axios
+        .get(`/api/weather/${zip}` )
+        .then(res => {
+            let { data } = res
+            console.log(data)
+            addWeather(data[0])
+        })
+}
 
-
+weatherForm.addEventListener('submit', getWeather)
 
 
 

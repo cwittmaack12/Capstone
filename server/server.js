@@ -22,7 +22,7 @@ app.get('/styles', getCSS)
 app.get('/js', getJS)
 app.post('/api/list', addListItem)
 app.get('/api/zen', getZen)
-app.get('/api/weather', getWeather)
+app.get('/api/weather/:zip', getWeather)
 app.delete('/api/list/:id', deleteListItem)
 
 

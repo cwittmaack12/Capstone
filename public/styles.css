@@ -1,5 +1,6 @@
 .body{
     background-color: #465775;
+    font-family: 'Karla', sans-serif;
 }
 
 .header{
@@ -29,15 +30,49 @@
 }
 
 .box1{
-    width: 35%;
+    width: 25%;
     height: 80%;
     background-color: #D4DCDF;
     border-radius: 30px;
 }
 
+.tmpText{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size:80%;  
+}
+
+.condition{
+    font-size:80%;
+    margin-bottom: 20px;
+}
+
+.current{
+    font-size:80%;
+}
+
+.degrees{
+    margin-top: 10px;
+    font-size: 80%;
+}
+
+.toDoForm{
+    align-items: center;
+    padding-top: 5%;
+    padding-left: 5%;
+}
+
+.textBox{
+    width: 70%;
+    height: 5%
+}
+
+li.button{
+    margin-left: 50px
+}
 
 .box2{
-    width: 35%;
+    width: 25%;
     height: 80%;
     background-color: #465775;
     display: flex;
@@ -63,8 +98,8 @@
 }
 
 .itemList{
-    height: 90%;
-    background-color: aquamarine;
+    height: 85%;
+    background-color: #D4DCDF;
     margin-top: 20px;
 }
 
@@ -75,7 +110,13 @@
 }
 
 .quote{
-    background-color: red;
+    background-color: #D4DCDF;
     height: 80%;
     margin-top: 7%;
 }
+
+blockquote{
+    color: black;
+    font-size: 1.5vw;
+}
+
