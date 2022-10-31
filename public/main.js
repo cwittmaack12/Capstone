@@ -2,6 +2,7 @@
 const addForm = document.querySelector('.toDoForm')
 const inputItem = document.querySelector('.textBox')
 const container = document.querySelector('.itemList')
+const clearBtn = document.querySelector('.addBtn')
 
 
 
@@ -14,11 +15,10 @@ const createList = array => {
         let deleteButton = document.createElement('button')
         let listText = document.createElement('span')
 
-        //listItem.id = id
         deleteButton.id = id
         listText.textContent = item
         deleteButton.textContent = 'Delete'
-        ///deleteButton below is the right one?  Seems to be.
+        
         deleteButton.addEventListener('click', deleteListItem)
         
         listItem.appendChild(listText)
@@ -26,6 +26,7 @@ const createList = array => {
         newList.appendChild(listItem)
     })
     container.appendChild(newList)
+
 }
 
 const addToList = (evt) => {
@@ -43,6 +44,7 @@ const addToList = (evt) => {
 }
 
 
+
 const deleteListItem = (evt) =>{
     evt.preventDefault()
     let toDoID = evt.target.id
@@ -57,6 +59,7 @@ const deleteListItem = (evt) =>{
 }
 
 addForm.addEventListener('submit', addToList)
+
 
 ///get Zen//
 

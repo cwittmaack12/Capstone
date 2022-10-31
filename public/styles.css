@@ -1,6 +1,9 @@
 .body{
-    background-color: #465775;
+    background-image: url(https://i.pinimg.com/originals/ef/a3/c6/efa3c654a8950588d11e457c7b3b93e2.jpg);
     font-family: 'Karla', sans-serif;
+    color: whitesmoke;
+    text-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+    
 }
 
 .header{
@@ -13,33 +16,44 @@
     text-justify: center;
     padding-top: 15px;
     font-size: 3em;
-    color: white;
+    color: whitesmoke;
     border-radius: 30px;
+    border: darkgrey solid;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+span{
+    font-size: 1.5em;  
 }
 
 .parent{
     height: 900px;
-    background-color: blanchedalmond;
     margin-left: 280px;
     margin-right: 280px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #465775;
-
 }
 
 .box1{
     width: 25%;
     height: 80%;
-    background-color: #D4DCDF;
+    background-color: #EF6F6C;
     border-radius: 30px;
+    border: darkgrey solid;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
+
+
 
 .tmpText{
     margin-top: 10px;
     margin-bottom: 0px;
     font-size:80%;  
+}
+
+li{
+    margin-top: 10px;
 }
 
 .condition{
@@ -64,42 +78,54 @@
 
 .textBox{
     width: 70%;
-    height: 5%
+    height: 25px;
+    background-color: whitesmoke;
+    border: none;
+    outline: none;
+    border-radius: 10px;    
 }
 
-li.button{
-    margin-left: 50px
+.weatherBox{
+    height: 25px;
+    width: 10ch ;
+    background-color: whitesmoke;
+    border: none;
+    outline: none;
+    border-radius: 10px;    
 }
 
 .box2{
     width: 25%;
     height: 80%;
-    background-color: #465775;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    
 }
 
 .inside1{
-    background-color: #D4DCDF;
+    background-color: #EF6F6C;
     height: 45%;
     border-radius: 30px;
     text-align: center;
     font-size: 1.75em;
+    border: darkgrey solid;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 
 }
 
 .inside2{
-    background-color: #D4DCDF;
+    background-color: #EF6F6C;
     height: 45%;
     border-radius: 30px;
+    border: darkgrey solid;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 
 }
 
 .itemList{
     height: 85%;
-    background-color: #D4DCDF;
+    background-color: #EF6F6C;
     margin-top: 20px;
 }
 
@@ -110,13 +136,32 @@ li.button{
 }
 
 .quote{
-    background-color: #D4DCDF;
+    background-color: #EF6F6C;
     height: 80%;
     margin-top: 7%;
 }
 
 blockquote{
-    color: black;
-    font-size: 1.5vw;
+    color: whitesmoke;
+    font-size: 1.3vw;
 }
 
+button {
+  background: whitesmoke;
+  border-radius: 800px;
+  box-shadow: whitesmoke 0 10px 20px -10px;
+  color: black;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 1 black;
+}
