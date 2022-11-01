@@ -128,6 +128,24 @@ span{
 
 }
 
+.weatherHolder{
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+    align-content: stretch;
+}
+
+.weatherReport{
+    padding-top: 10px;
+}
+.weatherReport.div{
+    
+}
+
+img{
+    height: 5vw;
+    width: 7vw;
+}
 .itemList{
     height: 80%;
     background-color: #EF6F6C;

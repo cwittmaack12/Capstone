@@ -93,17 +93,24 @@ const weatherForm = document.querySelector('.weatherForm')
 const cityText = document.querySelector('.weatherBox')
 const weatherDropBox = document.querySelector('.weatherReport') 
 const condition = document.querySelector('.condition')
+const words = document.querySelector('.words')
 
 const addWeather = (weatherObject) => {
     weatherDropBox.innerHTML = ''
     condition.innerHTML = ''
-    let {WeatherText, HasPrecipitation, PrecipitationType, Temperature: {Imperial: {Value}}  } = weatherObject
-    let weatherBlock = document.createElement('div')
-    weatherBlock.innerHTML = Value
+    let {WeatherText, WeatherIcon, Temperature: {Imperial: {Value}}  } = weatherObject
+    
+    const weatherBlock = document.createElement('div')
+    weatherBlock.innerHTML = `${Value} °F`
     weatherDropBox.appendChild(weatherBlock)
-    let weatherCondition = document.createElement('div')
-    weatherCondition.innerHTML = WeatherText
-    condition.appendChild(weatherCondition)
+
+    const image = new Image
+    image.src = `/images/${WeatherIcon}.png`;
+    condition.appendChild(image)
+
+    const description = document.createElement('div') 
+    description.innerHTML = WeatherText
+    words.appendChild(description)
 }
 
 const getWeather = (evt) => {
