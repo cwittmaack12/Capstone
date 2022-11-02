@@ -11,7 +11,7 @@
     text-align: center;
     margin-left: 320px;
     margin-right: 320px;
-    margin-top:  65px;
+    margin-top:  45px;
     height: 80px;
     text-justify: center;
     padding-top: 15px;
@@ -52,7 +52,7 @@ li{
 }
 
 span{
-    font-size: 1.5em;
+    font-size: 1em;
     margin-right: 20px;
 }
 
@@ -95,8 +95,11 @@ span{
     outline: none;
     border-radius: 10px;
     font-size: 20px; 
-    color: rgb(102, 100, 100);    
-   
+    color: rgb(102, 100, 100);       
+}
+
+.weatherForm{
+    padding-top: 10px;
 }
 
 .box2{
@@ -130,22 +133,24 @@ span{
 
 .weatherHolder{
     display: flex;
-    flex-direction: column;
     height: 75%;
-    align-content: stretch;
+    flex-direction: column;
+    padding-top: 15px;
 }
 
 .weatherReport{
-    padding-top: 10px;
+    height: 25%;
 }
-.weatherReport.div{
-    
+
+.condition{
+    height: 75%;
 }
 
 img{
-    height: 5vw;
-    width: 7vw;
+    height: 85%;
 }
+
+
 .itemList{
     height: 80%;
     background-color: #EF6F6C;
@@ -170,22 +175,76 @@ blockquote{
 }
 
 button {
-    background: whitesmoke;
-    border-radius: 800px;
-    box-shadow: whitesmoke 0 10px 20px -10px;
-    color: black;
+    min-width: 100px;
+    min-height: 20px;
+    font-size: 17px;
+    letter-spacing: 0px;
+    font-weight: 450;
+    color: #313133;
+    background: #555e5d;
+    background: linear-gradient(90deg, rgb(249, 246, 246) 0%, rgb(201, 199, 199) 100%);
+    border: none;
+    border-radius: 100px;
+    box-shadow: 8px 8px 20px rgb(188, 185, 185);
+    transition: all 0.3s ease-in-out 0s;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 18px;
-    opacity: 1;
-    outline: 0 solid transparent;
-    padding: 8px 18px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: fit-content;
-    word-break: break-word;
-    border: 1 black;
-    margin-right: 10px;
-}
+    outline: none;
+    position: relative;
+    padding: 10px;
+    margin-left: 10px;
+    }
+  
+  button::before {
+    content: '';
+    border-radius: 500px;
+    min-width: calc(100px + 12px);
+    min-height: calc(30px + 8px);
+    border: 4px solid gray;
+    box-shadow: 0 0 60px gray;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+  }
+  
+  button:hover, button:focus {
+    color: #313133;
+    transform: translateY(-6px);
+  }
+  
+  button:hover::before, button:focus::before {
+    opacity: 0;
+  }
+  
+  button::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 1px solid thin gray;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+  }
+  
+  button:hover::after, button:focus::after {
+    animation: none;
+    display: none;
+  }
+  
+  @keyframes ring {
+    0% {
+      width: 60px;
+      height: 60px;
+      opacity: 1;
+    }
+    100% {
+      width: 250px;
+      height: 250px;
+      opacity: 0;
+    }
+  }

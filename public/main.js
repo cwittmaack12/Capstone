@@ -25,10 +25,7 @@ const createList = array => {
         newList.appendChild(listItem)
     })
     container.appendChild(newList)
-
 }
-
-
 
 const addToList = (evt) => {
     evt.preventDefault();
@@ -45,9 +42,6 @@ const addToList = (evt) => {
         .catch(err => console.log(err))
 }
 
-
-
-
 const deleteListItem = (evt) =>{
     evt.preventDefault()
     let toDoID = evt.target.id
@@ -60,9 +54,7 @@ const deleteListItem = (evt) =>{
         })
         .catch(err => console.log(err))
 }
-
 addForm.addEventListener('submit', addToList)
-
 
 ///get Zen//
 
@@ -93,7 +85,6 @@ const weatherForm = document.querySelector('.weatherForm')
 const cityText = document.querySelector('.weatherBox')
 const weatherDropBox = document.querySelector('.weatherReport') 
 const condition = document.querySelector('.condition')
-const words = document.querySelector('.words')
 
 const addWeather = (weatherObject) => {
     weatherDropBox.innerHTML = ''
@@ -101,16 +92,14 @@ const addWeather = (weatherObject) => {
     let {WeatherText, WeatherIcon, Temperature: {Imperial: {Value}}  } = weatherObject
     
     const weatherBlock = document.createElement('div')
-    weatherBlock.innerHTML = `${Value} °F`
+    weatherBlock.innerHTML = `${Value}° F  &  ${WeatherText}`
     weatherDropBox.appendChild(weatherBlock)
 
     const image = new Image
     image.src = `/images/${WeatherIcon}.png`;
     condition.appendChild(image)
 
-    const description = document.createElement('div') 
-    description.innerHTML = WeatherText
-    words.appendChild(description)
+   
 }
 
 const getWeather = (evt) => {
