@@ -182,10 +182,10 @@ button {
     font-weight: 450;
     color: #313133;
     background: #555e5d;
-    background: linear-gradient(90deg, rgb(249, 246, 246) 0%, rgb(201, 199, 199) 100%);
+    background: linear-gradient(90deg, rgb(249, 246, 246) 0%, rgb(231, 190, 190) 100%);
     border: none;
     border-radius: 100px;
-    box-shadow: 8px 8px 20px rgb(188, 185, 185);
+    box-shadow: 8px 8px 24px rgb(241, 206, 206);
     transition: all 0.3s ease-in-out 0s;
     cursor: pointer;
     outline: none;
