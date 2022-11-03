@@ -15,6 +15,10 @@ Express, Cors, Zenquotes AIP, & Accuweather API.
 ## Demo
 https://share.vidyard.com/watch/bTSzSga8snPvaLm8a3EsZJ?
 
+## API Sites
+https://developer.accuweather.com/
+https://zenquotes.io/
+
 ## Install
 Run NPM I
 
